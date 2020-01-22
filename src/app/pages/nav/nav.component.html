@@ -18,24 +18,26 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <button mat-button color="" (click)="sidenav.open()">
-        <i (click)="sidenav.open()" class="material-icons">
-          menu
-        </i>
-      </button>
+    <mat-toolbar color="primary" class="myheader">
+      <div class="headerleft">
 
+        <button mat-button color="" >
+          <i (click)="sidenav.open()" class="material-icons">
+            menu
+          </i>
+        </button>
+        <span>Portail Web M2GI</span>
+      </div>
 
+      <div class="headerright">
+        <button mat-button>
+          <i class="material-icons">
+            power_settings_new
+          </i>
+          Déconnexion
+        </button>
+      </div>
 
-      <span> portailWeb</span>
     </mat-toolbar>
     <!-- Add Content Here thanks to routing -->
     <router-outlet></router-outlet>
