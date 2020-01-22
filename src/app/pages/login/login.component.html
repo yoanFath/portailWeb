@@ -3,14 +3,20 @@
     <mat-card-title>Connexion</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <form class="example-form">
+    <form [formGroup]="loginForm" (ngSubmit)="OnSubmit()" class="example-form">
+      <div *ngIf="loginForm.errors?.loginValidation && (loginForm.touched || loginForm.dirty)" class="errors cross-validation-error-message alert alert-danger">
+       password and email not matching
+      </div>
+
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Login">
+        <input type="email" matInput placeholder="Email" formControlName="email" email required>
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <input matInput type="password" placeholder="Password">
+        <input matInput type="password" placeholder="Password" formControlName="password" required>
       </mat-form-field>
+
+      <button mat-flat-button color="primary" type="submit" [disabled]="!loginForm.valid">Submit</button>
     </form>
   </mat-card-content>
 
