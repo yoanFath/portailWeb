@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import User from '../../model/User';
 
 @Component({
   selector: 'pwe-user-card',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserCardComponent implements OnInit {
 
+  @Input()
+  public user: User;
   constructor() { }
 
   ngOnInit() {
