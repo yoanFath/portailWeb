@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import {MatSidenav} from '@angular/material';
 
 @Component({
   selector: 'pwe-nav',
@@ -10,11 +11,17 @@ import { map, shareReplay } from 'rxjs/operators';
 })
 export class NavComponent {
 
+  @ViewChild('sidenav', {static: false}) sidenav: MatSidenav;
+
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
       shareReplay()
     );
+
+  close(reason: string) {
+    this.sidenav.close();
+  }
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
