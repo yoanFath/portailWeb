@@ -32,7 +32,7 @@ export class UserService {
         phone: '06.37.59.31.32', photo: 'https://material.angular.io/assets/img/examples/shiba1.jpg'},
       {firstName: 'Test', lastName: 'Débordement', email: 'test.debordement@gmail.com',
         role: 'Test', team: 'Débordement',
-        phone: '06.00.00.07.99', photo: 'https://material.angular.io/assets/img/examples/shiba1.jpg'}]
+        phone: '06.00.00.07.99', photo: 'https://material.angular.io/assets/img/examples/shiba1.jpg'}];
     return of (users);
   }
 }
