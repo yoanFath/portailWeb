@@ -23,6 +23,7 @@ import {RouterModule, Routes} from '@angular/router';
 import { GedComponent } from './pages/ged/ged.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { ActuComponent } from './pages/actu/actu.component';
+import {UserService} from './services/user.service';
 import {environment} from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
@@ -61,7 +62,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     MatGridListModule,
     MatListModule,
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
