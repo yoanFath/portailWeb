@@ -8,7 +8,6 @@ import {UserService} from '../../services/user.service';
   styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent implements OnInit {
-
   public users: User[];
   constructor(private userService: UserService) {
     userService.getUsers().subscribe(users => this.users = users);

@@ -29,6 +29,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
+import { ActuListComponent } from './components/actu-list/actu-list.component';
+import { ActuCardComponent } from './components/actu-card/actu-card.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
     DashboardComponent,
     GedComponent,
     ActuComponent,
-    UserListComponent
+    UserListComponent,
+    ActuListComponent,
+    ActuCardComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
