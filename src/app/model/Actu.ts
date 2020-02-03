@@ -1,6 +1,6 @@
 interface Actu {
   title: string;
-  date: Date;
+  date: string;
   content: string;
 }
 

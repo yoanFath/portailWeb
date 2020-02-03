@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material';
+import {ActuInputComponent} from '../../components/actu-input/actu-input.component';
 
 @Component({
   selector: 'pwe-actu',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActuComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
   }
 
+  newActu(): void {
+    const actuInput = this.dialog.open(ActuInputComponent, {
+      width: '50%'
+    });
+  }
 }
