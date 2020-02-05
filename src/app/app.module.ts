@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardModule, MatGridListModule, MatInputModule, MatSliderModule} from '@angular/material';
+import {MatCardModule, MatDatepickerModule, MatDialogModule, MatGridListModule, MatInputModule, MatSliderModule} from '@angular/material';
 import { LoginComponent } from './pages/login/login.component';
 import 'hammerjs';
 import { AngularFireModule } from '@angular/fire';
@@ -15,7 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { DashboardComponent } from './pages/dashboard/dashboard/dashboard.component';
@@ -28,6 +28,10 @@ import {environment} from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import { ActuListComponent } from './components/actu-list/actu-list.component';
+import { ActuCardComponent } from './components/actu-card/actu-card.component';
+import { ActuInputComponent } from './components/actu-input/actu-input.component';
 
 @NgModule({
   declarations: [
@@ -38,13 +42,17 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     DashboardComponent,
     GedComponent,
     ActuComponent,
-    UserListComponent
+    UserListComponent,
+    ActuListComponent,
+    ActuCardComponent,
+    ActuInputComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
+    AngularFireDatabaseModule,
     BrowserModule,
     MatExpansionModule,
     AppRoutingModule,
@@ -61,8 +69,12 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     MatCardModule,
     MatGridListModule,
     MatListModule,
+    MatDialogModule,
+    MatDatepickerModule,
+    FormsModule
   ],
   providers: [UserService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ActuInputComponent]
 })
 export class AppModule { }

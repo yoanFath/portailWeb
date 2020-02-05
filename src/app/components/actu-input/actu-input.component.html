@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>Ajouter une actualité</h1>
+<mat-dialog-content class="content">
+  <mat-form-field>
+    <input matInput
+           placeholder="Titre"
+           [(ngModel)]="actu.title"
+    >
+  </mat-form-field>
+  <mat-form-field>
+      <textarea matInput
+                placeholder="Description (HTML)"
+                [(ngModel)]="actu.content"
+      >
+    </textarea>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions class="buttons">
+  <button mat-raised-button (click)="addActu()">Ajouter</button>
+</mat-dialog-actions>
