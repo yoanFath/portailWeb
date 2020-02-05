@@ -32,6 +32,8 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { ActuListComponent } from './components/actu-list/actu-list.component';
 import { ActuCardComponent } from './components/actu-card/actu-card.component';
 import { ActuInputComponent } from './components/actu-input/actu-input.component';
+import { UserComponent } from './pages/user/user.component';
+import {AngularFireAuthGuard} from '@angular/fire/auth-guard';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { ActuInputComponent } from './components/actu-input/actu-input.component
     UserListComponent,
     ActuListComponent,
     ActuCardComponent,
-    ActuInputComponent
+    ActuInputComponent,
+    UserComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -73,7 +76,7 @@ import { ActuInputComponent } from './components/actu-input/actu-input.component
     MatDatepickerModule,
     FormsModule
   ],
-  providers: [UserService],
+  providers: [UserService, AngularFireAuthGuard],
   bootstrap: [AppComponent],
   entryComponents: [ActuInputComponent]
 })

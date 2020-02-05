@@ -18,12 +18,13 @@ export class AppComponent implements OnInit  {
     this.afAuth.authState.subscribe(user => {
       if (user) {
         this.router.navigate(['/dashboard']);
-        console.log('GO TO DASHBOARD');
+        localStorage.setItem('userUID', user.uid);
+        console.log(user.uid);
         // go to home page
       } else {
         // go to login page
         this.router.navigate(['/login']);
-        console.log('GO TO LOGIN');
+        // console.log('GO TO LOGIN');
       }
     });
   }
