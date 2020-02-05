@@ -10,9 +10,9 @@ import {AuthenticationService} from '../../services/authentication.service';
 })
 export class LoginComponent implements OnInit {
   loginForm = this.fb.group({
-    email: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required],
-  }, { validators: loginValidation });
+  }, );
   // private fb: FormBuilder()
   constructor(private fb: FormBuilder, private authenticationService: AuthenticationService) { }
 
@@ -24,20 +24,17 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  get email() {
+    return this.loginForm.get('email');
+  }
+
   signIn(email, password) {
     this.authenticationService.SignIn(email, password);
 
   }
 
-  signOut() {
-    this.authenticationService.SignOut();
-  }
-
 }
 
-export const loginValidation: ValidatorFn = (control: FormGroup): ValidationErrors | null => {
-  const email = control.get('email');
-  const password = control.get('password');
 
-  return email && password  ? { loginValidation: true } : null;
-};
+
+
