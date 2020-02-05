@@ -34,6 +34,7 @@ import { ActuCardComponent } from './components/actu-card/actu-card.component';
 import { ActuInputComponent } from './components/actu-input/actu-input.component';
 import { GedCardComponent } from './components/ged-card/ged-card.component';
 import { GedListComponent } from './components/ged-list/ged-list.component';
+import { GedInputComponent } from './components/ged-input/ged-input.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { GedListComponent } from './components/ged-list/ged-list.component';
     ActuCardComponent,
     ActuInputComponent,
     GedCardComponent,
-    GedListComponent
+    GedListComponent,
+    GedInputComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),

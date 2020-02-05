@@ -1,7 +1,8 @@
+import {Observable} from 'rxjs';
+
 interface File {
   name: string;
-  date: string;
-  description: string;
+  url: string;
 }
 
 export default File;

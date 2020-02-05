@@ -12,4 +12,6 @@ export class GedComponent implements OnInit {
   ngOnInit() {
   }
 
+  fileUpload() {
+  }
 }
