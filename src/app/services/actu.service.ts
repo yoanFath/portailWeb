@@ -13,7 +13,6 @@ export class ActuService {
     return this.fireStore.collection<Actu>('actus').valueChanges();
   }
   public newActu(actu: Actu): void {
-    console.log(actu);
     this.fireStore.collection<Actu>('actus').add(actu);
   }
 }
