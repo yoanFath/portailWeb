@@ -4,7 +4,15 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardModule, MatDatepickerModule, MatDialogModule, MatGridListModule, MatInputModule, MatSliderModule} from '@angular/material';
+import {
+  MatCardModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatGridListModule,
+  MatInputModule,
+  MatProgressBarModule,
+  MatSliderModule
+} from '@angular/material';
 import { LoginComponent } from './pages/login/login.component';
 import 'hammerjs';
 import { AngularFireModule } from '@angular/fire';
@@ -77,10 +85,14 @@ import { GedInputComponent } from './components/ged-input/ged-input.component';
     MatListModule,
     MatDialogModule,
     MatDatepickerModule,
-    FormsModule
+    FormsModule,
+    MatProgressBarModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent],
-  entryComponents: [ActuInputComponent]
+  entryComponents: [
+    ActuInputComponent,
+    GedInputComponent
+  ]
 })
 export class AppModule { }

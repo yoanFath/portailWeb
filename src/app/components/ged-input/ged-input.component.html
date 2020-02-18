@@ -1,1 +1,9 @@
-<p>ged-input works!</p>
+<h1 mat-dialog-title>Ajouter un fichier</h1>
+<mat-dialog-content class="content">
+  <input type="file" (change)="detectFile($event)"/>
+</mat-dialog-content>
+<mat-dialog-actions class="buttons">
+  <button class="gedActions" mat-raised-button (click)="addFile()">Ajouter</button>
+  <mat-progress-bar class="gedActions" mode="determinate" [value]="this.uploadProgress"></mat-progress-bar>
+</mat-dialog-actions>
+
