@@ -40,6 +40,8 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { ActuListComponent } from './components/actu-list/actu-list.component';
 import { ActuCardComponent } from './components/actu-card/actu-card.component';
 import { ActuInputComponent } from './components/actu-input/actu-input.component';
+import { UserComponent } from './pages/user/user.component';
+import {AngularFireAuthGuard} from '@angular/fire/auth-guard';
 import { GedCardComponent } from './components/ged-card/ged-card.component';
 import { GedListComponent } from './components/ged-list/ged-list.component';
 import { GedInputComponent } from './components/ged-input/ged-input.component';
@@ -59,6 +61,7 @@ import { ActuDetailComponent } from './components/actu-detail/actu-detail.compon
     ActuListComponent,
     ActuCardComponent,
     ActuInputComponent,
+    UserComponent,
     GedCardComponent,
     GedListComponent,
     GedInputComponent,
@@ -92,7 +95,7 @@ import { ActuDetailComponent } from './components/actu-detail/actu-detail.compon
     MatProgressBarModule,
     CKEditorModule
   ],
-  providers: [UserService],
+  providers: [UserService, AngularFireAuthGuard],
   bootstrap: [AppComponent],
   entryComponents: [
     ActuInputComponent,

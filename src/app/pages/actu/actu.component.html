@@ -1,4 +1,4 @@
-<button mat-raised-button class="addActuButton" (click)="newActu()">
+<button *ngIf="droit == 'admin'" mat-raised-button class="addActuButton" (click)="newActu()">
   Ajouter une actualité
 </button>
 <pwe-actu-list>

@@ -3,6 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import {MatSidenav} from '@angular/material';
+import {AuthenticationService} from '../../services/authentication.service';
 
 @Component({
   selector: 'pwe-nav',
@@ -23,6 +24,10 @@ export class NavComponent {
     this.sidenav.close();
   }
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  signOut() {
+    this.authenticationService.SignOut();
+  }
+
+  constructor(private breakpointObserver: BreakpointObserver, private authenticationService: AuthenticationService) {}
 
 }

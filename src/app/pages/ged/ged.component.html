@@ -1,4 +1,4 @@
-<button mat-raised-button class="addFileButton" (click)="fileUpload()">
+<button *ngIf="droit == 'admin' || droit == 'employe'" mat-raised-button class="addFileButton" (click)="fileUpload()">
   Ajouter un fichier
 </button>
 <pwe-ged-list>
