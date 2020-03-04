@@ -4,7 +4,15 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardModule, MatDatepickerModule, MatDialogModule, MatGridListModule, MatInputModule, MatSliderModule} from '@angular/material';
+import {
+  MatCardModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatGridListModule,
+  MatInputModule,
+  MatProgressBarModule,
+  MatSliderModule
+} from '@angular/material';
 import { LoginComponent } from './pages/login/login.component';
 import 'hammerjs';
 import { AngularFireModule } from '@angular/fire';
@@ -34,6 +42,9 @@ import { ActuCardComponent } from './components/actu-card/actu-card.component';
 import { ActuInputComponent } from './components/actu-input/actu-input.component';
 import { UserComponent } from './pages/user/user.component';
 import {AngularFireAuthGuard} from '@angular/fire/auth-guard';
+import { GedCardComponent } from './components/ged-card/ged-card.component';
+import { GedListComponent } from './components/ged-list/ged-list.component';
+import { GedInputComponent } from './components/ged-input/ged-input.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +60,9 @@ import {AngularFireAuthGuard} from '@angular/fire/auth-guard';
     ActuCardComponent,
     ActuInputComponent,
     UserComponent
+    GedCardComponent,
+    GedListComponent,
+    GedInputComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -74,10 +88,14 @@ import {AngularFireAuthGuard} from '@angular/fire/auth-guard';
     MatListModule,
     MatDialogModule,
     MatDatepickerModule,
-    FormsModule
+    FormsModule,
+    MatProgressBarModule
   ],
   providers: [UserService, AngularFireAuthGuard],
   bootstrap: [AppComponent],
-  entryComponents: [ActuInputComponent]
+  entryComponents: [
+    ActuInputComponent,
+    GedInputComponent
+  ]
 })
 export class AppModule { }

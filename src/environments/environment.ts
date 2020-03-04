@@ -9,7 +9,7 @@ export const environment = {
     authDomain: 'portail-web-angular.firebaseapp.com',
     databaseURL: 'https://portail-web-angular.firebaseio.com',
     projectId: 'portail-web-angular',
-    storageBucket: 'portail-web-angular.appspot.com',
+    storageBucket: 'gs://portail-web-angular.appspot.com/',
     messagingSenderId: '722404920755',
     appId: '1:722404920755:web:e49f3ef3af03ea8dbf4fc6'
   }
