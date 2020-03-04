@@ -15,24 +15,25 @@ export class AdminGuardGuard implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     let userID = localStorage.getItem('userUID');
-
+    let hasRight = false;
     let userRef = this.fireStore.collection('users').doc(userID).ref;
 
     userRef.get().then(doc => {
       if (!doc.exists) {
         console.log('No such document! ' + userID);
-        return false;
+        hasRight =  false;
       } else {
-        console.log('Document data:', doc.data());
+        console.log('Document data:', doc.data().droit);
+        console.log(doc.data().droit === 'admin');
+
         // test si le role est le bon
-        return true;
+        hasRight = doc.data().droit === 'admin';
       }
     })
       .catch(err => {
         console.log('Error getting document', err);
-        return false;
+        hasRight = false;
       });
-
-    return true;
+    return hasRight;
   }
 }

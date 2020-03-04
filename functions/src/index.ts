@@ -18,7 +18,8 @@ exports.triggerUser = functions.auth.user().onCreate((user) => {
       lastName:'',
       phone:'',
       photo:'',
-      role:'utilisateur',
+      role:'',
+      droit:'client',
       team:'',
       job:''
 

@@ -27,7 +27,7 @@ const routes: Routes = [
     data: {authGuardPipe: redirectUnauthorizedToLogin}
   },
   {
-    path: 'actu', component: ActuComponent, canActivate: [AngularFireAuthGuard, AdminGuardGuard],
+    path: 'actu', component: ActuComponent, canActivate: [AngularFireAuthGuard],
     data: {authGuardPipe: redirectUnauthorizedToLogin}
   },
   {

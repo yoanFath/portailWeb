@@ -59,7 +59,7 @@ import { GedInputComponent } from './components/ged-input/ged-input.component';
     ActuListComponent,
     ActuCardComponent,
     ActuInputComponent,
-    UserComponent
+    UserComponent,
     GedCardComponent,
     GedListComponent,
     GedInputComponent
