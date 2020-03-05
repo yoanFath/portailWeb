@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>{{modifiedUser.firstName}} {{modifiedUser.lastName}}</h1>
+<mat-dialog-content class="content">
+  <mat-form-field>
+    <input matInput required placeholder="Rôle" [(ngModel)]="modifiedUser.role">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput required placeholder="Équipe" [(ngModel)]="modifiedUser.team">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput required placeholder="Téléphone" [(ngModel)]="modifiedUser.phone">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions class="actions">
+  <button mat-raised-button (click)="editUser()">Modifier</button>
+</mat-dialog-actions>

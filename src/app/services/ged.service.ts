@@ -17,7 +17,7 @@ export class GedService {
     this.fireStorage.storage.ref().listAll().then((res) => {
       res.items.forEach((itemRef) => {
         itemRef.getDownloadURL().then((url) => {
-          files.push({name: itemRef.name, url: url});
+          files.push({name: itemRef.name, url});
         });
       });
     });

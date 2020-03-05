@@ -47,6 +47,7 @@ import { GedListComponent } from './components/ged-list/ged-list.component';
 import { GedInputComponent } from './components/ged-input/ged-input.component';
 import {CKEditorModule} from 'ckeditor4-angular';
 import { ActuDetailComponent } from './components/actu-detail/actu-detail.component';
+import { UserUpdateComponent } from './components/user-update/user-update.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { ActuDetailComponent } from './components/actu-detail/actu-detail.compon
     GedCardComponent,
     GedListComponent,
     GedInputComponent,
-    ActuDetailComponent
+    ActuDetailComponent,
+    UserUpdateComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -99,7 +101,8 @@ import { ActuDetailComponent } from './components/actu-detail/actu-detail.compon
   bootstrap: [AppComponent],
   entryComponents: [
     ActuInputComponent,
-    GedInputComponent
+    GedInputComponent,
+    UserUpdateComponent
   ]
 })
 export class AppModule { }
