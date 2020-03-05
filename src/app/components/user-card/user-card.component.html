@@ -5,7 +5,7 @@
       <mat-card-title>{{user.firstName}} {{user.lastName}}</mat-card-title>
       <mat-card-subtitle>{{user.role}}</mat-card-subtitle>
     </mat-card-header>
-    <i class="material-icons md-24 icon-detail icon-edit" (click)="editUser()">edit</i>
+    <i *ngIf="connectedUser && (connectedUser.droit === 'admin' || (connectedUser.droit === 'employe' && connectedUser.email === user.email))" class="material-icons md-24 icon-detail icon-edit" (click)="editUser()">edit</i>
   </div>
   <mat-card-content>
     <div class="detail">

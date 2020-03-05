@@ -11,7 +11,7 @@ import {Router} from '@angular/router';
 export class AppComponent implements OnInit  {
   title = 'portailWeb';
 
-  constructor(public afAuth: AngularFireAuth) {
+  constructor(public afAuth: AngularFireAuth, private router: Router) {
   }
 
   ngOnInit() {
@@ -23,7 +23,7 @@ export class AppComponent implements OnInit  {
         // go to home page
       } else {
         // go to login page
-
+        this.router.navigate(['/login']);
         // console.log('GO TO LOGIN');
       }
     });

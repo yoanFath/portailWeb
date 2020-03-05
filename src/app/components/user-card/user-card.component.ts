@@ -11,6 +11,9 @@ import {UserUpdateComponent} from '../user-update/user-update.component';
 export class UserCardComponent implements OnInit {
   @Input()
   public user: User;
+
+  @Input()
+  public connectedUser: User;
   constructor(public dialog: MatDialog) { }
 
   ngOnInit() {

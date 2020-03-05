@@ -23,4 +23,15 @@ export class RightService {
       }
     }));
   }
+
+  public getUser(): Observable<User> {
+    const userID = localStorage.getItem('userUID');
+    const right = 'client';
+    const userRef = this.fireStore.collection<User>('users').doc(userID).valueChanges();
+
+    return userRef.pipe(map(doc => {
+      console.log(doc );
+      return doc as User;
+    }));
+  }
 }
