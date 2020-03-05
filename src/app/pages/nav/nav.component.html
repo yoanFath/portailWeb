@@ -10,11 +10,10 @@
     </mat-toolbar>
     <mat-divider></mat-divider>
     <mat-nav-list>
-      <a mat-list-item routerLinkActive="active" [routerLink]="['/login']" (click)="sidenav.close()">Login</a>
-      <a mat-list-item routerLinkActive="active" [routerLink]="['/actu']" (click)="sidenav.close()">Actualités</a>
       <a mat-list-item routerLinkActive="active" [routerLink]="['/dashboard']" (click)="sidenav.close()">Dashboard</a>
+      <a mat-list-item routerLinkActive="active" [routerLink]="['/actu']" (click)="sidenav.close()">Actualités</a>
+      <a mat-list-item routerLinkActive="active" [routerLink]="['/user']" (click)="sidenav.close()">Utilisateurs</a>
       <a mat-list-item routerLinkActive="active" [routerLink]="['/ged']" (click)="sidenav.close()">GED</a>
-      <a mat-list-item routerLinkActive="active" [routerLink]="['/user']" (click)="sidenav.close()">Liste des utilisateurs</a>
       <router-outlet></router-outlet>
     </mat-nav-list>
   </mat-sidenav>
