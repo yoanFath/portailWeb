@@ -11,19 +11,19 @@ import {Router} from '@angular/router';
 export class AppComponent implements OnInit  {
   title = 'portailWeb';
 
-  constructor(public afAuth: AngularFireAuth, private router: Router) {
+  constructor(public afAuth: AngularFireAuth) {
   }
 
   ngOnInit() {
     this.afAuth.authState.subscribe(user => {
       if (user) {
-        this.router.navigate(['/dashboard']);
+
         localStorage.setItem('userUID', user.uid);
         console.log(user.uid);
         // go to home page
       } else {
         // go to login page
-        this.router.navigate(['/login']);
+
         // console.log('GO TO LOGIN');
       }
     });
