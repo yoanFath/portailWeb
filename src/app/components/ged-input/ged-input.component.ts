@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialogRef} from '@angular/material';
 import {GedService} from '../../services/ged.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'pwe-ged-input',
