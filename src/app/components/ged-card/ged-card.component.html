@@ -5,7 +5,8 @@
         <mat-card-title>{{file.name}}</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-          <img [src]="file.url"/>
+        <ngx-doc-viewer *ngIf="handleWithGoogleViewer(file)" [url]="file.url" viewer="google"></ngx-doc-viewer>
+        <img *ngIf="!handleWithGoogleViewer(file)" [src]="file.url"/>
       </mat-card-content>
     </div>
   </mat-card>
