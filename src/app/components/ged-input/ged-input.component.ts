@@ -19,6 +19,11 @@ export class GedInputComponent implements OnInit {
     this.gedService.uploadProgress.subscribe((progress) => {
       this.uploadProgress = progress;
       if (progress === 100) {
+        this.dialogRef.afterClosed().subscribe(async () => {
+          setTimeout(() => {
+            window.location.reload();
+          }, 5000);
+        });
         this.dialogRef.close();
       }
     });
