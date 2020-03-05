@@ -1,1 +1,12 @@
-<p>actu-detail works!</p>
+<mat-dialog-content class="content">
+  <div class="header">
+    <mat-card-header>
+      <mat-card-title>{{actu.actu.title}}</mat-card-title>
+      <mat-card-subtitle>{{actu.actu.date}}</mat-card-subtitle>
+    </mat-card-header>
+  </div>
+  <mat-card-content>
+    <div class="content" [innerHTML]="actu.actu.content">
+    </div>
+  </mat-card-content>
+</mat-dialog-content>

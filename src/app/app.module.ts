@@ -48,6 +48,7 @@ import { GedInputComponent } from './components/ged-input/ged-input.component';
 import {CKEditorModule} from 'ckeditor4-angular';
 import { ActuDetailComponent } from './components/actu-detail/actu-detail.component';
 import { UserUpdateComponent } from './components/user-update/user-update.component';
+import {NgbModalBackdrop} from '@ng-bootstrap/ng-bootstrap/modal/modal-backdrop';
 
 @NgModule({
   declarations: [
@@ -100,6 +101,7 @@ import { UserUpdateComponent } from './components/user-update/user-update.compon
   providers: [UserService, AngularFireAuthGuard],
   bootstrap: [AppComponent],
   entryComponents: [
+    ActuDetailComponent,
     ActuInputComponent,
     GedInputComponent,
     UserUpdateComponent
