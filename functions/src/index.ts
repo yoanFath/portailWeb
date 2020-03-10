@@ -17,11 +17,9 @@ exports.triggerUser = functions.auth.user().onCreate((user) => {
       firstName:'',
       lastName:'',
       phone:'',
-      photo:'',
+      photo:'https://material.angular.io/assets/img/examples/shiba1.jpg',
       role:'',
       droit:'client',
-      team:'',
-      job:''
-
+      team:''
     });
 });
