@@ -12,6 +12,10 @@
         Utilisez une adresse mail valide
       </div>
 
+      <div *ngIf="mdpIncorrect != null" class="errors cross-validation-error-message alert alert-danger">
+        Mot de passe incorrect
+      </div>
+
       <mat-form-field class="example-full-width">
         <input type="email" matInput placeholder="Email" formControlName="email" email required>
       </mat-form-field>

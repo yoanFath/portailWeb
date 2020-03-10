@@ -16,21 +16,6 @@ export class AuthenticationService {
     this.userData = angularFireAuth.authState;
   }
 
-  /* Sign in */
-  SignIn(email: string, password: string) {
-    this.angularFireAuth
-      .auth
-      .signInWithEmailAndPassword(email, password)
-      .then(res => {
-        console.log('You are Successfully logged in!');
-        this.router.navigate(['/dashboard']);
-      })
-      .catch(err => {
-        console.log('Something is wrong:', err.message);
-        this.router.navigate(['/login']);
-      });
-  }
-
   /* Sign out */
   SignOut() {
     this.angularFireAuth
