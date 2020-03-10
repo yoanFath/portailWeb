@@ -18,4 +18,8 @@ export class UserListComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  sortUserByName(users: User[]): User[] {
+    return users.sort((a, b) => (a.lastName > b.lastName) ? 1 : -1);
+  }
 }
