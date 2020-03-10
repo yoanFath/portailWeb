@@ -1,6 +1,9 @@
+import * as firebase from 'firebase';
+import Timestamp = firebase.firestore.Timestamp;
+
 interface Actu {
   title: string;
-  date: string;
+  date: Timestamp;
   content: string;
 }
 

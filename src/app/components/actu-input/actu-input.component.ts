@@ -2,6 +2,8 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {MatDialogRef} from '@angular/material';
 import Actu from '../../model/Actu';
 import {ActuService} from '../../services/actu.service';
+import Timestamp = firebase.firestore.Timestamp;
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'pwe-actu-input',
@@ -9,7 +11,7 @@ import {ActuService} from '../../services/actu.service';
   styleUrls: ['./actu-input.component.scss']
 })
 export class ActuInputComponent {
-  public actu: Actu = {title: '', date: new Date().toLocaleDateString(), content: ''};
+  public actu: Actu = {title: '', date: Timestamp.now(), content: ''};
   constructor(public dialogRef: MatDialogRef<ActuInputComponent>,
               public actuService: ActuService) { }
 

@@ -1,4 +1,4 @@
 <div class="list">
-  <pwe-actu-card *ngFor="let actu of actus" (click)="open(actu)" [actu]="actu">
+  <pwe-actu-card *ngFor="let actu of sortActuByDate(actus)" (click)="open(actu)" [actu]="actu">
   </pwe-actu-card>
 </div>

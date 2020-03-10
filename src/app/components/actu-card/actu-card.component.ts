@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import Actu from '../../model/Actu';
 
+
 @Component({
   selector: 'pwe-actu-card',
   templateUrl: './actu-card.component.html',
@@ -14,5 +15,4 @@ export class ActuCardComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

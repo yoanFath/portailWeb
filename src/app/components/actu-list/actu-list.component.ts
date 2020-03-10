@@ -26,4 +26,8 @@ export class ActuListComponent implements OnInit {
         }
       });
   }
+
+  sortActuByDate(actus: Actu[]) {
+    return actus.sort((a, b) => (a.date < b.date) ? 1 : -1);
+  }
 }
