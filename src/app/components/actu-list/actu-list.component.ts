@@ -22,7 +22,7 @@ export class ActuListComponent implements OnInit {
       const actuInput = this.dialog.open(ActuDetailComponent, {
         width: '50%',
         data: {
-          actu: actu
+          actu
         }
       });
   }

@@ -18,7 +18,7 @@ export class RightService {
 
     return userRef.pipe(map(doc => {
       const user = doc as User;
-       if (user.droit) {
+      if (user.droit) {
         return user.droit;
       }
     }));

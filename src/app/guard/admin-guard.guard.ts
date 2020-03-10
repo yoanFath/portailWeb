@@ -14,9 +14,9 @@ export class AdminGuardGuard implements CanActivate {
 
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    let userID = localStorage.getItem('userUID');
+    const userID = localStorage.getItem('userUID');
     let hasRight = false;
-    let userRef = this.fireStore.collection('users').doc(userID).ref;
+    const userRef = this.fireStore.collection('users').doc(userID).ref;
 
     userRef.get().then(doc => {
       if (!doc.exists) {
