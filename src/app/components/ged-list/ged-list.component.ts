@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {GedService} from '../../services/ged.service';
+import {File} from '../../model/File';
 
 @Component({
   selector: 'pwe-ged-list',
@@ -16,4 +17,7 @@ export class GedListComponent implements OnInit {
   ngOnInit() {
   }
 
+  sortFilesByDate(files: File[]): File[] {
+    return files.sort((a, b) => (a.time < b.time) ? 1 : -1);
+  }
 }
