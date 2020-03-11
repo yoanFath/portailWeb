@@ -2,7 +2,7 @@
   <div class="header">
     <mat-card-header>
       <mat-card-title>{{actu.actu.title}}</mat-card-title>
-      <mat-card-subtitle>{{actu.actu.date}}</mat-card-subtitle>
+      <mat-card-subtitle>{{actu.actu.date.toDate().toLocaleDateString()}}</mat-card-subtitle>
     </mat-card-header>
   </div>
   <mat-card-content>

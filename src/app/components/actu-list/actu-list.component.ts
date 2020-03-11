@@ -14,10 +14,8 @@ export class ActuListComponent implements OnInit {
   constructor(public dialog: MatDialog, private actuService: ActuService) {
     actuService.getActus().subscribe(actus => this.actus = actus);
   }
-
   ngOnInit() {
   }
-
   open(actu) {
       const actuInput = this.dialog.open(ActuDetailComponent, {
         width: '50%',
@@ -26,8 +24,7 @@ export class ActuListComponent implements OnInit {
         }
       });
   }
-
-  sortActuByDate(actus: Actu[]): Actu[] {
+   sortActuByDate(actus: Actu[]): Actu[] {
     return actus.sort((a, b) => (a.date < b.date) ? 1 : -1);
   }
 }
